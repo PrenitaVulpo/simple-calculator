@@ -15,8 +15,20 @@ body {
 .calculator-grid {
 	display: grid;
 	justify-content: center;
-	align-items: center;
+	align-content: center;
 	min-height: 100vh;
 	grid-template-columns: repeat(4, 6.25rem);
 	grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
+}
+
+.calculator-grid > button {
+	cursor: pointer;
+	font-size: 2rem;
+	border: 1px solid #fff;
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button {
+	background-color: rgba(255, 255, 255, 0.9);
 }
