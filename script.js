@@ -13,13 +13,25 @@ class Calculator {
 
   delete() { }
 
-  appendNumber(number) { }
+  appendNumber(number) {
+    if (number === '.' && this.currentOperand.includes('.')) {
+      return
+    }
+    this.currentOperand += number
+  }
 
-  chooseOperation(operation) { }
+  chooseOperation(operation) {
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    this.currentOperand = '';
+  }
 
   compute() { }
 
-  updateDisplay() { }
+  updateDisplay() {
+    this.currentOperandTextElement.innerText = this.currentOperand
+    this.previousOperandTextElement.innerText = this.previousOperand
+  }
 
 }
 
