@@ -3,6 +3,19 @@ class Calculator {
     this.previousOperandTextElement = previousOperandTextElement;
     this.currentOperandTextElement = currentOperandTextElement;
   }
+
+  clear() { }
+
+  delete() { }
+
+  appendNumber(number) { }
+
+  chooseOperation(operation) { }
+
+  compute() { }
+
+  updateDisplay() { }
+
 }
 
 const numberButtons = document.querySelectorAll('[data-number]');
