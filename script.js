@@ -14,16 +14,19 @@ class Calculator {
   delete() { }
 
   appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) {
-      return
-    }
+    if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand += number
   }
 
   chooseOperation(operation) {
+    if (this.currentOperand === '') return
+    if (this.previousOperand !== '') {
+      this.compute()
+    }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
+    this.updateDisplay()
   }
 
   compute() { }
@@ -49,5 +52,11 @@ numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
+  })
+})
+
+operationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.chooseOperation(button.innerText)
   })
 })
